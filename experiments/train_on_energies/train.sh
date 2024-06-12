@@ -11,7 +11,7 @@ for potential in "${potentials[@]}"; do
         # Repeat each training 3 times
         for run in {1..3}; do
             echo "Running training for potential: $potential, dataset: $dataset, run: $run"
-            python perform_training.py ../../scripts/perform_training.py \
+            python ../../scripts/perform_training.py \
             --potential_path="../../configs/potential_${potential}.toml" \
             --dataset_path="../../configs/dataset_${dataset}.toml" \
             --training_path="../../configs/training.toml"
