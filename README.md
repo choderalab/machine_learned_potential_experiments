@@ -1,2 +1,2 @@
-# machine_learned_potential_experiments
+# Experiments
 Perform experiments with modelforge
