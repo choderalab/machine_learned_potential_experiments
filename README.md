@@ -8,8 +8,8 @@ As result, we provide test/validation set RMSE, training curve (MSE), training r
 The folder structure looks like follows:
 ```
 experiments
-- train_on_nergies # name of the experiment
-  - configs # define the training, deposit all toml files for dataset/potential that differ from the default values 
+- name_of_the_experiment 
+  - config # define the training, deposit all toml files for dataset/potential that differ from the default values 
     - training.toml
   - README # describe why this experiment is performed, and what is performed
   - train.sh # reproduces the experiment on a single node/GPU
