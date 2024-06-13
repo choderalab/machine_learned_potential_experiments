@@ -21,10 +21,10 @@ for potential in "${potentials[@]}"; do
         for run in {1..3}; do
             echo "Running training for potential: $potential, dataset: $dataset, run: $run"
             # Construct the python command
-            python_cmd="python perform_training.py ../../scripts/perform_training.py \
-            --potential_path=\"../../configs/potential_${potential}.toml\" \
-            --dataset_path=\"../../configs/dataset_${dataset}.toml\" \
-            --training_path=\"../../configs/training.toml\""
+            python_cmd="python ../../scripts/perform_training.py \
+            --potential_path=\"../../configs/potentials/${potential}.toml\" \
+            --dataset_path=\"../../configs/datasets/${dataset}.toml\" \
+            --training_path=\"configs/training.toml\""
 
             # Add optional accelerator and device arguments if provided
             if [ -n "$accelerator" ]; then
@@ -37,10 +37,6 @@ for potential in "${potentials[@]}"; do
             # Execute the python command
             echo $python_cmd
             eval $python_cmd
-
-            
-            
-            python 
 
         done
     done
