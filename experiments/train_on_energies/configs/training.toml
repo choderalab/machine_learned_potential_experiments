@@ -5,6 +5,9 @@ experiment_name = "train_on_energies"
 accelerator = "gpu"
 num_nodes = 1
 devices = 1                              #[0,1,2,3]
+batch_size = 512
+remove_self_energies = true
+pin_memory = true
 
 training_parameters.lr = 1e-3
 training_parameters.lr_scheduler_config.frequency = 1
