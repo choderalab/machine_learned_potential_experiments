@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# example usage: bash train.sh --accelerator 'gpu' --device 2
+# example usage: bash train.sh --accelerator 'gpu' --device [2]
 
 # Parse command-line arguments for optional accelerator and device
 while [[ "$#" -gt 0 ]]; do
