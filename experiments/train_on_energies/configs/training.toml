@@ -2,7 +2,7 @@
 nr_of_epochs = 1_000
 save_dir = "training"
 experiment_name = "train_on_energies"
-accelerator = "cpu"
+accelerator = "gpu"
 num_nodes = 1
 devices = 1                              #[0,1,2,3]
 batch_size = 512
@@ -26,10 +26,7 @@ early_stopping.monitor = "val/combined_loss"
 early_stopping.min_delta = 0.001
 early_stopping.patience = 50
 
-stochastic_weight_averaging_config.swa_epoch_start=100
-stochastic_weight_averaging_config.swa_lrs=1e-2
+# stochastic_weight_averaging_config.swa_epoch_start=100
+# stochastic_weight_averaging_config.swa_lrs=1e-2
 
-loss_parameter.loss_type = "NaiveEnergyAndForceLoss"
-loss_parameter.include_force = true
-loss_parameter.force_weight = 1.0
-loss_parameter.energy_weight = 1.0
+loss_parameter.loss_type = "EnergyLoss"
