@@ -30,3 +30,5 @@ early_stopping.patience = 50
 # stochastic_weight_averaging_config.swa_lrs=1e-2
 
 loss_parameter.loss_type = "EnergyLoss"
+loss_parameter.energy_weight = 0.99
+loss_parameter.force_weight =  0.01
