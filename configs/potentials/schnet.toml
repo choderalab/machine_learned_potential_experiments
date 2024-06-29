@@ -14,11 +14,6 @@ processing_operation = [
     { in = [
         "E_i",
     ], out = "E_i", step = "normalization", mean = "E_i_mean", stddev = "E_i_mean" },
-    { in = [
-        "atomic_numbers",
-        'atomic_subsystem_indices',
-    ], out = "ase", step = "calculate_ase" },
-
 ]
 readout_operation = [
     { step = "from_atom_to_molecule", mode = 'sum', in = 'E_i', index_key = 'atomic_subsystem_indices', out = 'E' },
