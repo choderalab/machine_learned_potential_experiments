@@ -27,7 +27,8 @@ for potential in "${potentials[@]}"; do
             python_cmd="python ../../scripts/perform_training.py \
             --potential_path=\"../../configs/potentials/${potential}.toml\" \
             --dataset_path=\"../../configs/datasets/${dataset}.toml\" \
-            --training_path=\"configs/training.toml\""
+            --training_path=\"configs/training.toml\"
+            --runtime_path=\"configs/runtime.toml\""
 
             # Add optional accelerator and device arguments if provided
             if [ -n "$accelerator" ]; then

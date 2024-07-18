@@ -1,11 +1,8 @@
 [training]
-nr_of_epochs = 500
-accelerator = "gpu"
 num_nodes = 1
 devices = 1                              # [0,1,2,3]
 remove_self_energies = true
 batch_size = 128
-local_cache_dir = "./cache"
 
 [training.training_parameter]
 lr = 1e-3
