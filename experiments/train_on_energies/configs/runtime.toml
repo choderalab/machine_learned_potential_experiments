@@ -1,7 +1,7 @@
 [runtime]
-nr_of_epochs = 500
 accelerator = "gpu"
-save_dir = "test"
 num_nodes = 1
 devices = 1                  #[0,1,2,3]
 local_cache_dir = "./cache"
+save_dir = "only_energy"
+experiment_name = "{model_name}_{dataset_name}"
