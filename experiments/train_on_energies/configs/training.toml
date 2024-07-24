@@ -1,12 +1,12 @@
 [training]
 num_nodes = 1
-devices = 1                 # [0,1,2,3]
+devices = 2                 # [0,1,2,3]
 remove_self_energies = true
 batch_size = 128
 nr_of_epochs = 500
 
 [training.training_parameter]
-lr = 1e-3
+lr = 0.5e-3
 
 [training.experiment_logger]
 logger_name = "wandb"
@@ -18,11 +18,11 @@ job_type = "train"
 frequency = 1
 mode = "min"
 factor = 0.1
-patience = 10
-cooldown = 5
+patience = 25
+cooldown = 25
 min_lr = 1e-8
 threshold = 0.1
-threshold_mode = "abs"
+threshold_mode = "rel"
 monitor = "val/per_molecule_energy/rmse"
 interval = "epoch"
 
