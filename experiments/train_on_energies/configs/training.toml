@@ -2,7 +2,7 @@
 num_nodes = 1
 devices = 2                 # [0,1,2,3]
 remove_self_energies = true
-batch_size = 128
+batch_size = 256
 nr_of_epochs = 500
 
 [training.training_parameter]
@@ -17,7 +17,7 @@ job_type = "train"
 [training.training_parameter.lr_scheduler_config]
 frequency = 1
 mode = "min"
-factor = 0.1
+factor = 0.5
 patience = 25
 cooldown = 25
 min_lr = 1e-8
