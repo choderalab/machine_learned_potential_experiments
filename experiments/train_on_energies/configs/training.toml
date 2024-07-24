@@ -10,6 +10,9 @@ lr = 1e-3
 
 [training.experiment_logger]
 logger_name = "wandb"
+project_name = "modelforge_training"
+group = 'exp01'
+job_type = "train"
 
 [training.training_parameter.lr_scheduler_config]
 frequency = 1
