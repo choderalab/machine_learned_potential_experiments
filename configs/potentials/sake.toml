@@ -5,7 +5,7 @@ potential_name = "SAKE"
 
 number_of_radial_basis_functions = 16
 maximum_interaction_radius = "5.0 angstrom"
-number_of_interaction_modules = 6
+number_of_interaction_modules = 4
 number_of_spatial_attention_heads = 4
 activation_function = "SiLU"
 
