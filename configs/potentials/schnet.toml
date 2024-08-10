@@ -4,10 +4,18 @@ potential_name = "SchNet"
 [potential.core_parameter]
 number_of_radial_basis_functions = 16
 maximum_interaction_radius = "5.0 angstrom"
-number_of_interaction_modules = 3
-number_of_filters = 32
+number_of_interaction_modules = 4
+number_of_filters = 16
 shared_interactions = false
 activation_function = "ShiftedSoftplus"
+
+[potential.core_parameter.featurization]
+properties_to_featurize = ['atomic_number']
+maximum_atomic_number = 101
+number_of_per_atom_features = 32
+
+[potential.core_parameter.activation_function_parameter]
+activation_function_name = "ShiftedSoftplus"
 
 [potential.core_parameter.featurization]
 properties_to_featurize = ['atomic_number']
