@@ -1,7 +1,0 @@
-[runtime]
-accelerator = "gpu"
-num_nodes = 1
-devices = 1                  #[0,1,2,3]
-local_cache_dir = "./cache"
-save_dir = "only_energy"
-experiment_name = "{model_name}_{dataset_name}"
