@@ -9,7 +9,7 @@ number_of_interaction_modules = 5
 number_of_filters = 128
 shared_interactions = true
 predicted_properties = ["per_atom_energy"]
-predicted_dim = [1, 1]
+predicted_dim = [1]
 # ------------------------------------------------------------ #
 [potential.core_parameter.activation_function_parameter]
 activation_function_name = "ShiftedSoftplus"
