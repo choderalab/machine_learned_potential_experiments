@@ -13,8 +13,8 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Define arrays for potentials and datasets
-potentials=("ani2x" "painn" "sake" "schnet" "physnet")
-datasets=("qm9" "phalkethoh")
+potentials=("ani2x" "painn" "sake" "schnet" "physnet" "aimnet2" "tensornet")
+datasets=("phalkethoh")
 
 # Iterate through each potential
 for potential in "${potentials[@]}"; do
