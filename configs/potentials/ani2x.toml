@@ -18,6 +18,12 @@ activation_function_name = "CeLU"
 [potential.core_parameter.activation_function_parameter.activation_function_arguments]
 alpha = 0.1
 
+[potential.core_parameter.activation_function_parameter]
+activation_function_name = "CeLU"   # for the original ANI behavior please stick with CeLu since the alpha parameter is currently hard coded and might lead to different behavior when another activation function is used.
+
+[potential.core_parameter.activation_function_parameter.activation_function_arguments]
+alpha = 0.1
+
 [potential.postprocessing_parameter]
 properties_to_process = ['per_atom_energy']
 [potential.postprocessing_parameter.per_atom_energy]

@@ -19,6 +19,9 @@ properties_to_featurize = ['atomic_number']
 maximum_atomic_number = 101
 number_of_per_atom_features = 11
 
+[potential.core_parameter.activation_function_parameter]
+activation_function_name = "SiLU"
+
 [potential.postprocessing_parameter]
 properties_to_process = ['per_atom_energy']
 [potential.postprocessing_parameter.per_atom_energy]

@@ -14,21 +14,20 @@ done
 
 # Define arrays for potentials and datasets
 potentials=("ani2x" "painn" "sake" "schnet" "physnet")
-datasets=("ani2x" "spice2" "qm9" "phalkethoh")
+datasets=("qm9" "phalkethoh")
 
 # Iterate through each potential
 for potential in "${potentials[@]}"; do
     # Iterate through each dataset
     for dataset in "${datasets[@]}"; do
         # Repeat each training 3 times
-        for run in {1..3}; do
             echo "Running training for potential: $potential, dataset: $dataset, run: $run"
             # Construct the python command
             python_cmd="python ../../scripts/perform_training.py \
-            --potential_path=\"../../configs/potentials/${potential}.toml\" \
-            --dataset_path=\"../../configs/datasets/${dataset}.toml\" \
-            --training_path=\"configs/training.toml\"
-            --runtime_path=\"configs/runtime.toml\""
+            --potential_parameter_path=\"../../configs/potentials/${potential}.toml\" \
+            --dataset_parameter_path=\"../../configs/datasets/${dataset}.toml\" \
+            --training_parameter_path=\"configs/training.toml\"
+            --runtime_parameter_path=\"configs/runtime.toml\""
 
             # Add optional accelerator and device arguments if provided
             if [ -n "$accelerator" ]; then
@@ -42,6 +41,5 @@ for potential in "${potentials[@]}"; do
             echo $python_cmd
             eval $python_cmd
 
-        done
     done
 done

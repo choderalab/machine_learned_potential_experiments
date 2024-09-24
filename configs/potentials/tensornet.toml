@@ -2,7 +2,7 @@
 potential_name = "TensorNet"
 
 [potential.core_parameter]
-number_of_per_atom_features = 8
+number_of_per_atom_features = 32
 number_of_interaction_layers = 2
 number_of_radial_basis_functions = 16
 maximum_interaction_radius = "5.1 angstrom"
