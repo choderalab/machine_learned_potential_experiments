@@ -11,9 +11,9 @@ logger_name = "wandb" # this will set which logger to use
 [training.experiment_logger.wandb_configuration]
 save_dir = "logs"
 project = "train_potentials"
-group = "modelforge_nnps"
+group = "exp00"
 log_model = true
-job_type = "training"
+job_type = "testing"
 tags = ["v_0.1.0"]
 notes = "testing training"
 
