@@ -1,6 +1,6 @@
 [potential]
 potential_name = "TensorNet"
-
+# ------------------------------------------------------------ #
 [potential.core_parameter]
 number_of_per_atom_features = 32
 number_of_interaction_layers = 2
@@ -11,16 +11,14 @@ maximum_atomic_number = 128
 equivariance_invariance_group = "O(3)"
 predicted_properties = ["per_atom_energy"]
 predicted_dim = [1]
-
+# ------------------------------------------------------------ #
 [potential.core_parameter.activation_function_parameter]
 activation_function_name = "SiLU"
-
+# ------------------------------------------------------------ #
 [potential.postprocessing_parameter]
 properties_to_process = ['per_atom_energy']
 [potential.postprocessing_parameter.per_atom_energy]
 normalize = false
 from_atom_to_molecule_reduction = true
 keep_per_atom_property = true
-
-[potential.postprocessing_parameter.general_postprocessing_operation]
-calculate_molecular_self_energy = true
+# ------------------------------------------------------------ #
