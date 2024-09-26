@@ -1,0 +1,24 @@
+[potential]
+potential_name = "TensorNet"
+# ------------------------------------------------------------ #
+[potential.core_parameter]
+number_of_per_atom_features = 128
+number_of_interaction_layers = 2
+number_of_radial_basis_functions = 64
+maximum_interaction_radius = "10. angstrom"
+minimum_interaction_radius = "0.0 angstrom"
+maximum_atomic_number = 101
+equivariance_invariance_group = "O(3)"
+predicted_properties = ["per_atom_energy"]
+predicted_dim = [1]
+# ------------------------------------------------------------ #
+[potential.core_parameter.activation_function_parameter]
+activation_function_name = "SiLU"
+# ------------------------------------------------------------ #
+[potential.postprocessing_parameter]
+properties_to_process = ['per_atom_energy']
+[potential.postprocessing_parameter.per_atom_energy]
+normalize = false
+from_atom_to_molecule_reduction = true
+keep_per_atom_property = true
+# ------------------------------------------------------------ #
