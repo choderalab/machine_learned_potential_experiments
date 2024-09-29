@@ -37,7 +37,7 @@ per_molecule_energy = 1.0
 verbose = true
 monitor = "val/per_molecule_energy/rmse"
 min_delta = 0.1
-patience = 50
+patience = 60
 # ------------------------------------------------------------ #
 [training.splitting_strategy]
 name = "random_record_splitting_strategy"
