@@ -1,13 +1,15 @@
-# Experiments
+# Machine Learned Potential Experiments
+
 Perform experiments with modelforge
 
-Each experiment is performed and saved in the `experiments` directory. Each experiment has a descriptive name and contains config files inside the configs folder to reproduce the experiment. For each experiment, we provide a descriptive README file, and a bash script reproducing the experiment on a single node and GPU (this might differ from how we run the experiment in practice). 
-As a result, we provide test/validation set RMSE, training curve (MSE), training rate scheduling, and the number of epochs.
+## Overview
 
-Note: we always train with the main branch of the `modelforge` repository. To make sure that we are able to reproduce the training code we will add the commit hash of the current `main` branch to each training.
+This repository contains experiments with machine-learned potentials using the modelforge framework. Each experiment is structured and saved within the experiments directory. The experiments are reproducible, with configuration files and detailed documentation provided for each.
 
 
-The folder structure looks like the following:
+## Folder structure
+
+The folder structure for experiments is organized as follows:
 ```
 experiments
 - name_of_the_experiment 
@@ -17,3 +19,24 @@ experiments
   - train.sh # reproduces the experiment on a single node/GPU
 
 ```
+## Experiments
+Each experiment includes:
+
+- Config files: Define training parameters and hyperparameters.
+- README files: Provide detailed descriptions of the experiment.
+- Bash scripts: Reproduce the experiment on a single node/GPU.
+- Results: Include test/validation set RMSE, training curve (MSE), training rate scheduling, and the number of epochs.
+
+All experiments use the main branch of the modelforge repository, with the commit hash included to ensure reproducibility.
+
+## Configurations
+
+Dataset and potential hyperparameters are defined within the configs directory. Each experiment's specific parameters are documented and saved accordingly.
+
+## Training framework
+
+Experiments are performed using PyTorch Lightning, with progress tracked via W&B. 
+The W&B repository is linked to each experiment.
+
+
+
