@@ -1,0 +1,46 @@
+[training]
+number_of_epochs = 500
+remove_self_energies = true
+batch_size = 64
+lr = 5e-4
+monitor_for_checkpoint = "val/per_molecule_energy/rmse"
+# ------------------------------------------------------------ #
+[training.experiment_logger]
+logger_name = "wandb"
+[training.experiment_logger.wandb_configuration]
+save_dir = "logs"
+project = "train_potentials"
+group = "exp00"              # use this to group different experiments
+log_model = true
+job_type = "testing"
+tags = ["v_0.1.0"]
+notes = "testing training"
+# ------------------------------------------------------------ #
+[training.lr_scheduler]
+frequency = 1
+mode = "min"
+factor = 0.1
+patience = 25
+cooldown = 10
+min_lr = 1e-8
+threshold = 0.5
+threshold_mode = "abs"
+monitor = "val/per_molecule_energy/rmse"
+interval = "epoch"
+# ------------------------------------------------------------ #
+[training.loss_parameter]
+loss_property = ['per_molecule_energy'] 
+[training.loss_parameter.weight]
+per_molecule_energy = 1.0
+# ------------------------------------------------------------ #
+[training.early_stopping]
+verbose = true
+monitor = "val/per_molecule_energy/rmse"
+min_delta = 0.05
+patience = 100
+# ------------------------------------------------------------ #
+[training.splitting_strategy]
+name = "random_record_splitting_strategy"
+data_split = [0.8, 0.1, 0.1]
+seed = 42
+# ------------------------------------------------------------ #
