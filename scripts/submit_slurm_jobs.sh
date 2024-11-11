@@ -54,8 +54,6 @@ for potential in "${potentials[@]}"; do
 		--error=%j_%x_%N.err << EOF
 #!/bin/bash
 source ${HOME}/.bashrc
-OPENMM_CPU_THREADS=4
-cd ${HOME}/workdir/shuaiy/machine_learned_potential_experiments/scripts/
 
 # Activate environment
 mamba activate mf-train
