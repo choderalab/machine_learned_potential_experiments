@@ -3,17 +3,16 @@ number_of_epochs = 200
 remove_self_energies = true
 batch_size = 128
 lr = 5e-4
-monitor = "val/per_system_energy/rmse"
+monitor = "val/per_system_energy/rmse" # Common monitor key
 shift_center_of_mass_to_origin = false
-log_norm = false
 plot_frequency = 1
 # ------------------------------------------------------------ #
 [training.experiment_logger]
 logger_name = "wandb"
 [training.experiment_logger.wandb_configuration]
 save_dir = "logs"
-project = "test_ANI2x_on_dataset"
-group = "exp00"
+project = "train_potentials"
+group = "exp00"              # use this to group different experiments
 log_model = true
 job_type = "testing"
 tags = ["v_0.1.0"]
@@ -33,18 +32,14 @@ threshold_mode = "abs"
 interval = "epoch"
 # ------------------------------------------------------------ #
 [training.loss_parameter]
-loss_components = ['per_atom_energy', 'per_atom_force'] 
+loss_components = ['per_atom_energy', 'per_atom_force']
 [training.loss_parameter.weight]
 per_atom_energy = 1.0
 per_atom_force = 0.01
-#[training.loss_parameter.target_weight]
-#per_atom_force = 0.01
-#[training.loss_parameter.mixing_steps]
-#per_atom_force = -0.05
 # ------------------------------------------------------------ #
 [training.early_stopping]
 verbose = true
-min_delta = 0.1
+min_delta = 0.05
 patience = 100
 # ------------------------------------------------------------ #
 [training.splitting_strategy]
