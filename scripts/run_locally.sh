@@ -15,17 +15,16 @@ done
 # Define arrays for potentials and datasets
 potentials=( "ani2x" "painn" "schnet" "physnet" "tensornet" "sake" "aimnet2")
 datasets=( "phalkethoh")
-potential_config_dir="potentials_defaults"
+potential_version="v1"
 
 # Iterate through each potential
 for potential in "${potentials[@]}"; do
     # Iterate through each dataset
     for dataset in "${datasets[@]}"; do
-        # Repeat each training 3 times
-            echo "Running training for potential: $potential, dataset: $dataset, run: $run"
-            # Construct the python command
+        echo "Running training for potential: $potential, dataset: $dataset, run: $run"
+        # Construct the python command
         python_cmd="python ../../scripts/perform_training.py \
---potential_parameter_path=\"../../configs/${potential_config_dir}/${potential}.toml\" \
+--potential_parameter_path=\"../../configs/potentials/${potential_version}/${potential}.toml\" \
 --dataset_parameter_path=\"../../configs/datasets/${dataset}.toml\" \
 --training_parameter_path=\"configs/training.toml\" \
 --runtime_parameter_path=\"configs/runtime.toml\""
