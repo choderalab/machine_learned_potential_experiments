@@ -1,0 +1,11 @@
+[runtime]
+save_dir = "lightning_logs"
+experiment_name = "{potential_name}_{dataset_name}"
+local_cache_dir = "./cache"
+accelerator = "gpu"
+number_of_nodes = 1
+devices = [0]                                        #[0,1,2,3]
+checkpoint_path = "None"
+simulation_environment = "PyTorch"
+log_every_n_steps = 50
+verbose = false
