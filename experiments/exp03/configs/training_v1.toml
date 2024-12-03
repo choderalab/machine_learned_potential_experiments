@@ -1,5 +1,5 @@
 [training]
-number_of_epochs = 200
+number_of_epochs = 500
 remove_self_energies = true
 batch_size = 128
 lr = 5e-4

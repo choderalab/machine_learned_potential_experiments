@@ -13,12 +13,11 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Define arrays for potentials and datasets
-potentials=( "schnet")
+potential_version=("v1")
+potentials=("schnet")
 # potentials=( "ani2x" "painn" "schnet" "physnet" "tensornet" "sake" "aimnet2")
-datasets=( "tmqm")
-potential_version=( "v2")
-training_config=( "training_v2")
-#training_config=( "training_v1" "training_v2" "training_v3")
+datasets=("tmqm")
+training_config=("training_v1")
 
 for potential_ver in "${potential_version[@]}"; do
     # Iterate through each potential
@@ -43,8 +42,8 @@ for potential_ver in "${potential_version[@]}"; do
                     fi
 
                     # Execute the python command
-                    echo $python_cmd
-                    eval $python_cmd
+                    echo "$python_cmd"
+                    eval "$python_cmd"
             done
         done
     done
