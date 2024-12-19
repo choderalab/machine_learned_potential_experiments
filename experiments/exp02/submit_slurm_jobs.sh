@@ -27,7 +27,7 @@ for potential in "${potentials[@]}"; do
         echo "Submitting training job for potential: $potential, dataset: $dataset"
 
         # Construct the python command
-        python_cmd="python perform_training.py \
+        python_cmd="python ../scripts/perform_training.py \
 		--potential_parameter_path=\"../../configs/potentials/${potential_config_dir}/${potential}.toml\" \
 		--dataset_parameter_path=\"../../configs/datasets/${dataset}.toml\" \
 		--training_parameter_path=\"configs/training.toml\" \
